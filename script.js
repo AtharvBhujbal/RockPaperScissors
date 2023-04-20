@@ -5,32 +5,51 @@ function getComputerChoice(){
     return ComputerChoice;
 }
 function playRound(playerSelection, computerSelection) {
-    playerSelection=playerSelection.toLowerCase();
+    let computercounter=0;
+    let playercounter=0;
     if(playerSelection===computerSelection){
-        console.log("Tie,Both Player entered the same sign")
+        alert("Tie,Both Player entered the same sign")
     }
     else if(playerSelection==="rock"){
         if(computerSelection==="paper"){
-            console.log("Paper Won!!,You Lost")
+            alert("Paper Won!!,You Lost")
+            computercounter++;
         }
         else{
-            console.log("Rock Won!!,Computer Lost") 
+            alert("Rock Won!!,Computer Lost")
+            playercounter++; 
         }
     }
     else if(playerSelection==="paper"){
         if(computerSelection==="rock"){
-            console.log("Paper Won!!,Computer Lost")
+            alert("Paper Won!!,Computer Lost")
+            playercounter++;
         }
         else{
-            console.log("Scissors Won!!,You Lost")
+            alert("Scissors Won!!,You Lost")
+            computercounter++;
         }
     }
     else if(playerSelection==="scissors"){
         if(computerSelection==="rock"){
-            console.log("Rock Won!!,You Lost")
+            alert("Rock Won!!,You Lost")
+            computercounter++;
         }
         else{
-            console.log("Scissors Won!!,Computer Lost")
+            alert("Scissors Won!!,Computer Lost")
+            playercounter++;
+        }
+    }
+}
+function game(){
+    for (let i = 0; i < 5; i++) {
+        let playerSelection=prompt("Please Enter Your choice from Rock,Paper,Scissors")
+        playerSelection=playerSelection.toLowerCase();
+        if(playerSelection==="rock"||"scissors"||"paper"){
+            alert("Please Enter a Valid Choice")
+        }
+        else{
+            playRound(playerSelection, computerSelection)
         }
     }
 }
