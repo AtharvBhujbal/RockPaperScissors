@@ -60,3 +60,4 @@ function game(){
         alert("Game Lost")
     }
 }
+game()
