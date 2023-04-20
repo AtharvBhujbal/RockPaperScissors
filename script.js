@@ -1,3 +1,6 @@
+//Variable Declared Globally So Every Function Has Access to it
+let computercounter=0;
+let playercounter=0;
 function getComputerChoice(){
     const array=["rock","paper","scissors"]
     const index=Math.floor(Math.random()*array.length);
@@ -5,8 +8,6 @@ function getComputerChoice(){
     return ComputerChoice;
 }
 function playRound(playerSelection, computerSelection) {
-    let computercounter=0;
-    let playercounter=0;
     if(playerSelection===computerSelection){
         alert("Tie,Both Player entered the same sign")
     }
@@ -51,5 +52,11 @@ function game(){
         else{
             playRound(playerSelection, computerSelection)
         }
+    }
+    if(playercounter>computercounter){
+        alert("Congratulation!!,You have won the game")
+    }
+    else{
+        alert("Game Lost")
     }
 }
