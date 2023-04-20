@@ -42,11 +42,15 @@ function playRound(playerSelection, ComputerChoice) {
         }
     }
 }
+function playerSelection(){
+    let playerSelection=prompt("Please Enter Your choice from Rock,Paper,Scissors");
+    playerSelection=playerSelection.toLowerCase();
+    return playerSelection;
+}
 function game(){
     for (let i = 0; i < 5; i++) {
         let ComputerChoice=getComputerChoice();
-        let playerSelection=prompt("Please Enter Your choice from Rock,Paper,Scissors")
-        playerSelection=playerSelection.toLowerCase();
+        let playerSelection=playerSelection();
         if(playerSelection==="rock"||playerSelection==="scissors"||playerSelection==="paper"){
             playRound(playerSelection, ComputerChoice)
         }
@@ -57,8 +61,11 @@ function game(){
     if(playercounter>computercounter){
         alert("Congratulation!!,You have won the game with ",playercounter-computercounter," points")
     }
+    else if(playercounter==computercounter){
+        alert("The game ended in a tie,Please Refresh to play again")
+    }
     else{
-        alert("Game Lost")
+        alert("Game Lost,Please Refresh to play again")
     }
 }
 game()  
