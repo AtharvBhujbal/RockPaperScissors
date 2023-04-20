@@ -7,12 +7,12 @@ function getComputerChoice(){
     const ComputerChoice=array[index];
     return ComputerChoice;
 }
-function playRound(playerSelection, computerSelection) {
-    if(playerSelection===computerSelection){
+function playRound(playerSelection, ComputerChoice) {
+    if(playerSelection===ComputerChoice){
         alert("Tie,Both Player entered the same sign")
     }
     else if(playerSelection==="rock"){
-        if(computerSelection==="paper"){
+        if(ComputerChoice==="paper"){
             alert("Paper Won!!,You Lost")
             computercounter++;
         }
@@ -22,7 +22,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     else if(playerSelection==="paper"){
-        if(computerSelection==="rock"){
+        if(ComputerChoice==="rock"){
             alert("Paper Won!!,Computer Lost")
             playercounter++;
         }
@@ -32,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     else if(playerSelection==="scissors"){
-        if(computerSelection==="rock"){
+        if(ComputerChoice==="rock"){
             alert("Rock Won!!,You Lost")
             computercounter++;
         }
@@ -44,20 +44,21 @@ function playRound(playerSelection, computerSelection) {
 }
 function game(){
     for (let i = 0; i < 5; i++) {
+        let ComputerChoice=getComputerChoice();
         let playerSelection=prompt("Please Enter Your choice from Rock,Paper,Scissors")
         playerSelection=playerSelection.toLowerCase();
-        if(playerSelection==="rock"||"scissors"||"paper"){
-            alert("Please Enter a Valid Choice")
+        if(playerSelection==="rock"||playerSelection==="scissors"||playerSelection==="paper"){
+            playRound(playerSelection, ComputerChoice)
         }
         else{
-            playRound(playerSelection, computerSelection)
+            alert("Please Enter a Valid Choice")
         }
     }
     if(playercounter>computercounter){
-        alert("Congratulation!!,You have won the game")
+        alert("Congratulation!!,You have won the game with ",playercounter-computercounter," points")
     }
     else{
         alert("Game Lost")
     }
 }
-game()
+game()  
