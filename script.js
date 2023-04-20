@@ -42,7 +42,7 @@ function playRound(playerSelection, ComputerChoice) {
         }
     }
 }
-function playerSelection(){
+function getplayerSelection(){
     let playerSelection=prompt("Please Enter Your choice from Rock,Paper,Scissors");
     playerSelection=playerSelection.toLowerCase();
     return playerSelection;
@@ -50,7 +50,7 @@ function playerSelection(){
 function game(){
     for (let i = 0; i < 5; i++) {
         let ComputerChoice=getComputerChoice();
-        let playerSelection=playerSelection();
+        let playerSelection=getplayerSelection();
         if(playerSelection==="rock"||playerSelection==="scissors"||playerSelection==="paper"){
             playRound(playerSelection, ComputerChoice)
         }
@@ -59,7 +59,7 @@ function game(){
         }
     }
     if(playercounter>computercounter){
-        alert("Congratulation!!,You have won the game with ",playercounter-computercounter," points")
+        alert("Congratulation!!,You have won the game with ${playercounter - computercounter} points")
     }
     else if(playercounter==computercounter){
         alert("The game ended in a tie,Please Refresh to play again")
