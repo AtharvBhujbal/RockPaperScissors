@@ -42,7 +42,6 @@ function playRound(playerSelection, ComputerChoice) {
         }
     }
 }
-// This is a random comment
 function getplayerSelection(){
     let playerSelection=prompt("Please Enter Your choice from Rock,Paper,Scissors");
     playerSelection=playerSelection.toLowerCase();
