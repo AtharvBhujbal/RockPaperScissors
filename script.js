@@ -22,7 +22,7 @@ let playercounter=player_score.textContent;
 const body=document.querySelector('.body');
 const round_result=document.querySelector('.round_result');
 function playRound(playerSelection, ComputerChoice) {
-    if(playercounter<5 && computercounter<5){
+    if(playercounter<4 && computercounter<4){
         if(playerSelection===ComputerChoice){
             round_result.textContent="Tie,Both Player entered the same sign";
         }
