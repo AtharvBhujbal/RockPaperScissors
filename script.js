@@ -19,7 +19,7 @@ const player_score=document.querySelector('.player_score');
 const computer_score=document.querySelector('.computer_score');
 let computercounter=computer_score.textContent;
 let playercounter=player_score.textContent;
-const body=document.querySelector('body');
+const body=document.querySelector('.body');
 const round_result=document.querySelector('.round_result');
 function playRound(playerSelection, ComputerChoice) {
     if(playercounter<5 && computercounter<5){
