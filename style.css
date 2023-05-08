@@ -13,9 +13,24 @@ img{
 }
 .scoreboard{
     margin: 70px 0 0 0 ;
+}
+.score{
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 200px;
+    font-size: 90px;
+}
+.player_score{
+    margin-right: 40px;
+}
+.text{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
     font-size: 40px;
+}
+.round_result{
+    margin: 20px;
+    text-align: center;
+    font-size: 20px;
 }
