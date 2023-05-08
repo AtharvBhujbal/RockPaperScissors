@@ -1,29 +1,3 @@
-// //Variable Declared Globally So Every Function Has Access to it
-// function game(){
-//     for (let i = 0; i < 5; i++) {
-//         let ComputerChoice=getComputerChoice();
-//         let playerSelection=getplayerSelection();
-//         if(playerSelection==="rock"||playerSelection==="scissors"||playerSelection==="paper"){
-//             playRound(playerSelection, ComputerChoice);
-//         }
-//         else{
-//             alert("Please Enter a Valid Choice");
-//         }
-//     }
-//     if(playercounter>computercounter){
-//         alert("Congratulation!!,You have won the game with ${playercounter - computercounter} points");
-//     }
-//     else if(playercounter==computercounter){
-//         alert("The game ended in a tie,Please Refresh to play again");
-//     }
-//     else{
-//         alert("Game Lost,Please Refresh to play again");
-//     }
-// }
-// game()  
-
-
-
 const rock=document.querySelector('.rock');
 const paper=document.querySelector('.paper');
 const scissors=document.querySelector('.scissors');
@@ -41,40 +15,66 @@ function getComputerChoice(){
     const ComputerChoice=array[index];
     return ComputerChoice;
 }
-let computercounter=0;
-let playercounter=0;
+const player_score=document.querySelector('.player_score');
+const computer_score=document.querySelector('.computer_score');
+let computercounter=computer_score.textContent;
+let playercounter=player_score.textContent;
+const body=document.querySelector('body');
+const round_result=document.querySelector('.round_result');
 function playRound(playerSelection, ComputerChoice) {
-    if(playerSelection===ComputerChoice){
-        alert("Tie,Both Player entered the same sign");
+    if(playercounter<5 && computercounter<5){
+        if(playerSelection===ComputerChoice){
+            round_result.textContent="Tie,Both Player entered the same sign";
+        }
+        else if(playerSelection==="rock"){
+            if(ComputerChoice==="paper"){
+                round_result.textContent="Paper Won!!,You Lost";
+                computercounter++;
+            }
+            else{
+                round_result.textContent="Rock Won!!,Computer Lost";
+                playercounter++; 
+            }
+        }
+        else if(playerSelection==="paper"){
+            if(ComputerChoice==="rock"){
+                round_result.textContent="Paper Won!!,Computer Lost";
+                playercounter++;
+            }
+            else{
+                round_result.textContent="Scissors Won!!,You Lost";
+                computercounter++;
+            }
+        }
+        else if(playerSelection==="scissors"){
+            if(ComputerChoice==="rock"){
+                round_result.textContent="Rock Won!!,You Lost";
+                computercounter++;
+            }
+            else{
+                round_result.textContent="Scissors Won!!,Computer Lost";
+                playercounter++;
+            }
+        }
+        player_score.textContent=playercounter;
+        computer_score.textContent=computercounter;
     }
-    else if(playerSelection==="rock"){
-        if(ComputerChoice==="paper"){
-            alert("Paper Won!!,You Lost");
-            computercounter++;
-        }
-        else{
-            alert("Rock Won!!,Computer Lost");
-            playercounter++; 
-        }
+    else{
+        winner(); 
     }
-    else if(playerSelection==="paper"){
-        if(ComputerChoice==="rock"){
-            alert("Paper Won!!,Computer Lost");
-            playercounter++;
-        }
-        else{
-            alert("Scissors Won!!,You Lost");
-            computercounter++;
-        }
-    }
-    else if(playerSelection==="scissors"){
-        if(ComputerChoice==="rock"){
-            alert("Rock Won!!,You Lost");
-            computercounter++;
-        }
-        else{
-            alert("Scissors Won!!,Computer Lost");
-            playercounter++;
-        }
-    }
+     
 }
+function winner(){  
+    if(playercounter>computercounter){
+        body.textContent="Congratulation!!,You have won the game";
+    }
+    else if(playercounter==computercounter){
+        body.textContent="The game ended in a tie,Please Refresh to play again";
+    }
+    else{
+        body.textContent="Game Lost,Please Refresh to play again";
+    }
+    body.setAttribute('style','font-size:60px')
+}
+
+
