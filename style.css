@@ -33,8 +33,14 @@ img{
 img:hover{
     transform: scale(1.2);
 }
+p{
+    font-size: 25px;
+}
+.weapon_text{
+    font-size: 45px;
+}
 .weapons{
-    margin-top: 100px;
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
