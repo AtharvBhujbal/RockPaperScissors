@@ -74,7 +74,7 @@ function winner(){
     else{
         body.textContent="Game Lost,Please Refresh to play again";
     }
-    body.setAttribute('style','font-size:60px')
+    body.setAttribute('style','font-size:6vh')
 }
 
 

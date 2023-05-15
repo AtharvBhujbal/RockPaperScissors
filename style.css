@@ -6,69 +6,63 @@ body{
 }
 .body {
     transition: 0.2s ease-in-out;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
     flex-direction: column;
     text-align: center;
-    display: flex; 
+    display: flex;
     justify-content: center; 
     align-items: center;
   }
 
 .header{
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 2vh;
+    font-size: 2vh;
 }
 h1{
-    font-size: 70px;
+    font-size: 7vh;
 }
 img{
-    width: 240px;
+    width: 24vh;
     transition: transform 0.3s ease-in-out;
 }
 img:hover{
     transform: scale(1.2);
 }
 p{
-    font-size: 25px;
+    font-size: 2.5vh;
 }
 .weapon_text{
-    font-size: 45px;
+    font-size: 4.5vh;
 }
 .weapons{
-    margin-top: 30px;
+    margin-top: 3vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 70px;
+    gap: 6vh;
 }
 .scoreboard{
-    margin: 70px 0 0 0 ;
+    margin: 7vh 0 0 0 ;
 }
 .score{
     display: flex;
     justify-content: center;
-    gap: 200px;
-    font-size: 90px;
+    gap: 20vh;
+    font-size: 9vh;
 }
 .player_score{
-    margin-right: 40px;
+    margin-right: 4vh;
 }
 .text{
     display: flex;
     justify-content: center;
-    gap: 50px;
-    font-size: 30px;
+    gap: 5vh;
+    font-size: 3vh;
 }
 .round_result{
-    margin: 20px;
+    margin: 2vh;
     text-align: center;
-    font-size: 20px;
+    font-size: 2vh;
 }
 .footer a img{
-    width: 25px;
+    width: 2.5vh;
 }
